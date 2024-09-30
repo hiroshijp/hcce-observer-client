@@ -1,6 +1,8 @@
-import { ConfigProvider, Space } from 'antd';
+import { ConfigProvider} from 'antd';
 import React from 'react';
 import { Home } from './Home';
+import { OutputProvider } from './contexts/OutputContext';
+import { IsSigninProvider } from './contexts/IsSigninContext';
 
 export const App: React.FC = () => (
   <ConfigProvider
@@ -14,9 +16,11 @@ export const App: React.FC = () => (
         colorBgContainer: '#f6ffed',
       },
     }}
-  >
-    <Space>
+  > 
+    <IsSigninProvider>
+    <OutputProvider>
       <Home />
-    </Space>
+    </OutputProvider>
+    </IsSigninProvider>
   </ConfigProvider>
 );

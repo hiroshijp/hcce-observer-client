@@ -2,13 +2,13 @@ import { Button } from 'antd';
 import React from 'react';
 
 interface CurlBtnProps {
-    path: string;
+    title: string;
 }
 
- export const CurlBtn: React.FC<CurlBtnProps> = ({path}) => {
+ export const CurlBtn: React.FC<CurlBtnProps> = ({title}) => {
     return (
         <Button>
-            {path}
+            {title}
         </Button>
     );
 };

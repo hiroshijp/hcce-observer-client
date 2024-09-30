@@ -1,21 +1,7 @@
-import {useState} from 'react';
+import {useContext} from 'react';
 import {Modal, Form, Input, Button} from 'antd';
 import { FormProps } from 'antd';
-
-// const req = (name: string, password: string)=>{
-//     const credentials = btoa(`${name}:${password}`);
-//     fetch('http://127.0.0.1:8080', {
-//         method: 'POST',
-//         mode: 'cors',
-//         headers: {
-//             'Authorization': `Basic ${credentials}`,
-//             'Content-Type': 'text/plain'
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.error(error));
-// }
+import { IsSigninContext } from '../contexts/IsSigninContext';
 
 const getData = async (name: string, password: string) => {
     try {
@@ -43,14 +29,14 @@ type SigninFieldType = {
 }
 
 export const SigninModal: React.FC = () => {
-    const [isSignin, setIsSignin] = useState(false);
+    const {setIsSignin} = useContext(IsSigninContext);
     const onFinish: FormProps<SigninFieldType>['onFinish'] = (values) => {
         getData(values.username, values.password);
         setIsSignin(true);
     };
     return (
         <Modal
-          open={!isSignin}
+          open={true}
           closable={false}
           footer={null}
         >  
