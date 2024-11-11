@@ -8,7 +8,10 @@ interface ApiPathItemProps {
     enable: boolean;
 }
 
-export const ApiPathItem: React.FC<ApiPathItemProps> = ({path, enable}) => {
+export const ApiPathItem: React.FC<ApiPathItemProps> = ({
+  path, 
+  enable
+}) => {
   return (
     <>
         {path}

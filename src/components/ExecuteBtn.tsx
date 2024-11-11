@@ -9,7 +9,11 @@ interface ExecuteBtnProps {
     enable: boolean;
 }
 
- export const ExecuteBtn: React.FC<ExecuteBtnProps> = ({title, path, enable}) => {
+ export const ExecuteBtn: React.FC<ExecuteBtnProps> = ({
+    title, 
+    path, 
+    enable
+}) => {
     const {setOutput} = useContext(OutputContext);
     const handleClick = () => {
         fetch('http://localhost:8080/api'+ path)

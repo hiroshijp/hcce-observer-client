@@ -3,7 +3,10 @@ import {Modal, Form, Input, Button} from 'antd';
 import { FormProps } from 'antd';
 import { IsSigninContext } from '../contexts/IsSigninContext';
 
-const getData = async (name: string, password: string) => {
+const getData = async (
+  name: string, 
+  password: string
+) => {
     try {
       const res = await fetch('http://localhost:8080/signin', {
         method: 'POST',
